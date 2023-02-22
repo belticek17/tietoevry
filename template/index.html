@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        td, th {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ed Sheeran Top Tracks</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Ranking</th>
+                    <th>Track Name</th>
+                    <th>Track ID</th>
+                    <th>Track Popularity</th>
+                    <th>Album Name</th>
+                    <th>Album Cover</th>
+                    <th>Album Genres</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i, name, id, popularity, album, cover_url, genres in table_data %}
+                <tr>
+                    <td>{{ i }}</td>
+                    <td>{{ name }}</td>
+                    <td>{{ id }}</td>
+                    <td>{{ popularity }}</td>
+                    <td>{{ album }}</td>
+                    <td><img src="{{ cover_url }}" alt="{{ album }}" width="100"></td>
+                    <td>{{ genres }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
